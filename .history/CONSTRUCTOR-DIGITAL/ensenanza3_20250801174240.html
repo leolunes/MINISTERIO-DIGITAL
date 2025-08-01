@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Evaluación - Enseñanza 3: Constructor pirata</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .question p {
+      font-weight: bold;
+    }
+    .results {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 15px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Evaluación - Enseñanza 3</h1>
+  <h2>“Constructor pirata: el peligro de levantar fuera del diseño”</h2>
+  
+  <form id="quizForm">
+    <div class="question">
+      <p>1. ¿Cuál fue el error principal de David al querer edificar una casa para Dios?</p>
+      <label><input type="radio" name="q1" value="a"> No tenía los recursos suficientes</label><br>
+      <label><input type="radio" name="q1" value="b"> No tenía la aprobación divina (Correcta)</label><br>
+      <label><input type="radio" name="q1" value="c"> No consultó al profeta Natán</label>
+    </div>
+
+    <div class="question">
+      <p>2. ¿Qué representa en la enseñanza un “constructor pirata”?</p>
+      <label><input type="radio" name="q2" value="a"> Alguien que roba materiales de otras obras</label><br>
+      <label><input type="radio" name="q2" value="b"> Alguien que construye sin obedecer el diseño de Dios (Correcta)</label><br>
+      <label><input type="radio" name="q2" value="c"> Alguien que predica sin conocimiento</label>
+    </div>
+
+    <div class="question">
+      <p>3. ¿Por qué no todo buen deseo tiene aprobación divina?</p>
+      <label><input type="radio" name="q3" value="a"> Porque Dios solo bendice ideas religiosas</label><br>
+      <label><input type="radio" name="q3" value="b"> Porque Dios responde solo a oraciones específicas</label><br>
+      <label><input type="radio" name="q3" value="c"> Porque Dios tiene un diseño que debe respetarse (Correcta)</label>
+    </div>
+
+    <div class="question">
+      <p>4. ¿Qué principio enseña 2 Samuel 7:1–13?</p>
+      <label><input type="radio" name="q4" value="a"> Que todo lo que haga el rey será aprobado</label><br>
+      <label><input type="radio" name="q4" value="b"> Que es necesario consultar a Dios antes de edificar (Correcta)</label><br>
+      <label><input type="radio" name="q4" value="c"> Que el templo debía ser edificado en Moab</label>
+    </div>
+
+    <div class="question">
+      <p>5. ¿Qué peligro enfrentamos al construir fuera del diseño?</p>
+      <label><input type="radio" name="q5" value="a"> El fracaso económico</label><br>
+      <label><input type="radio" name="q5" value="b"> La desconexión de la voluntad de Dios (Correcta)</label><br>
+      <label><input type="radio" name="q5" value="c"> La falta de personal capacitado</label>
+    </div>
+
+    <button type="button" onclick="calcularResultado()">Enviar respuestas</button>
+  </form>
+
+  <div id="result" class="results"></div>
+  <button onclick="descargarPDF()">Descargar resultado en PDF</button>
+
+  <script>
+    function calcularResultado() {
+      const respuestasCorrectas = {
+        q1: 'b',
+        q2: 'b',
+        q3: 'c',
+        q4: 'b',
+        q5: 'b'
+      };
+
+      let correctas = 0;
+      for (let key in respuestasCorrectas) {
+        const seleccionada = document.querySelector(`input[name="${key}"]:checked`);
+        if (seleccionada && seleccionada.value === respuestasCorrectas[key]) {
+          correctas++;
+        }
+      }
+
+      const resultado = `Respondiste correctamente ${correctas} de 5 preguntas.`;
+      document.getElementById('result').textContent = resultado;
+    }
+
+    function descargarPDF() {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      const resultado = document.getElementById('result').textContent;
+
+      doc.text("Resultado de la Evaluación", 10, 10);
+      doc.text("Enseñanza 3: Constructor pirata", 10, 20);
+      doc.text(resultado, 10, 40);
+
+      doc.save("ensenanza3.pdf");
+    }
+  </script>
+</body>
+</html>
