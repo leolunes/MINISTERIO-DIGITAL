@@ -1,0 +1,31 @@
+{
+  "titulo": "Constructor pirata: el peligro de levantar fuera del diseño",
+  "versiculos": ["2 Samuel 7:1–13", "Proverbios 19:21"],
+  "preguntas": [
+    {
+      "pregunta": "¿Cuál fue el error principal de David al querer edificar una casa para Dios?",
+      "opciones": ["No tenía los recursos suficientes", "No tenía la aprobación divina", "No consultó al profeta Natán"],
+      "respuesta_correcta": "No tenía la aprobación divina"
+    },
+    {
+      "pregunta": "¿Qué representa en la enseñanza un “constructor pirata”?",
+      "opciones": ["Alguien que roba materiales de otras obras", "Alguien que construye sin obedecer el diseño de Dios", "Alguien que predica sin conocimiento"],
+      "respuesta_correcta": "Alguien que construye sin obedecer el diseño de Dios"
+    },
+    {
+      "pregunta": "¿Por qué no todo buen deseo tiene aprobación divina?",
+      "opciones": ["Porque Dios solo bendice ideas religiosas", "Porque Dios responde solo a oraciones específicas", "Porque Dios tiene un diseño que debe respetarse"],
+      "respuesta_correcta": "Porque Dios tiene un diseño que debe respetarse"
+    },
+    {
+      "pregunta": "¿Qué principio enseña 2 Samuel 7:1–13?",
+      "opciones": ["Que todo lo que haga el rey será aprobado", "Que es necesario consultar a Dios antes de edificar", "Que el templo debía ser edificado en Moab"],
+      "respuesta_correcta": "Que es necesario consultar a Dios antes de edificar"
+    },
+    {
+      "pregunta": "¿Qué peligro enfrentamos al construir fuera del diseño?",
+      "opciones": ["El fracaso económico", "La desconexión de la voluntad de Dios", "La falta de personal capacitado"],
+      "respuesta_correcta": "La desconexión de la voluntad de Dios"
+    }
+  ]
+}
